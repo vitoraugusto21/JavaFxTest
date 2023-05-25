@@ -1,9 +1,9 @@
-package com.example.javafxtest;
+package com.example.javafxtest.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class MainWindow {
     @FXML
     private Label welcomeText;
 
