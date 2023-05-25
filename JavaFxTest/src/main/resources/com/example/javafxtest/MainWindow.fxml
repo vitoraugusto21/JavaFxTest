@@ -18,7 +18,7 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
          <children>
             <Label text="TECHNICAL ASSISTANCE SYSTEM" textAlignment="CENTER">
                <VBox.margin>
@@ -30,14 +30,14 @@
                   <Insets top="-30.0" />
                </padding>
             </Separator>
-            <Button mnemonicParsing="false" text="ATTENDANT" />
-            <Button mnemonicParsing="false" text="TECHNICIAN" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="84.0" text="MANAGER" />
+            <Button fx:id="attendant" alignment="CENTER" mnemonicParsing="false" text="ATTENDANT" />
+            <Button fx:id="tecnichian" alignment="CENTER" mnemonicParsing="false" text="TECHNICIAN" />
+            <Button fx:id="manager" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="84.0" text="MANAGER" />
             <Label text="ID" />
-            <TextField />
+            <TextField fx:id="id" maxHeight="100.0" maxWidth="100.0" />
             <Label text="PASSWORD" />
-            <TextField />
-            <Button mnemonicParsing="false" text="ENTER" />
+            <TextField fx:id="password" maxWidth="100.0" />
+            <Button fx:id="enter" mnemonicParsing="false" text="ENTER" />
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
