@@ -1,5 +1,6 @@
 package com.example.javafxtest.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -7,7 +8,7 @@ import javafx.scene.control.TextField;
 public class MainWindow {
 
     @FXML
-    private Button attendant;
+    private Button BtnAttendant;
 
     @FXML
     private Button enter;
@@ -23,5 +24,10 @@ public class MainWindow {
 
     @FXML
     private Button tecnichian;
+
+    @FXML
+    void BtnAttendantAction(ActionEvent event) {
+
+    }
 
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.javafxtest.controller.MainWindow">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxtest.controller.MainWindow">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -30,7 +30,7 @@
                   <Insets top="-30.0" />
                </padding>
             </Separator>
-            <Button fx:id="attendant" alignment="CENTER" mnemonicParsing="false" text="ATTENDANT" />
+            <Button fx:id="BtnAttendant" alignment="CENTER" mnemonicParsing="false" onAction="#BtnAttendantAction" text="ATTENDANT" />
             <Button fx:id="tecnichian" alignment="CENTER" mnemonicParsing="false" text="TECHNICIAN" />
             <Button fx:id="manager" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="84.0" text="MANAGER" />
             <Label text="ID" />
