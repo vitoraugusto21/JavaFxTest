@@ -35,7 +35,7 @@ public class MainWindow {
 
     @FXML
     void BtnManagerAction(ActionEvent event) {
-
+        MainApplication.changeScreen("manager");
     }
 
     @FXML
@@ -45,6 +45,7 @@ public class MainWindow {
 
     @FXML
     void BtnTecAction(ActionEvent event) {
+        MainApplication.changeScreen("tec");
 
     }
 

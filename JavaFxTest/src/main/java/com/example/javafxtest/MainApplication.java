@@ -12,7 +12,10 @@ import java.net.URL;
 public class MainApplication extends Application {
     private static Stage stage;
     private static Scene attendantScene;
-    private static Scene ClientScene;
+    private static Scene tecScene;
+    private static Scene managerScene;
+    private static Scene mainScene;
+
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -22,11 +25,17 @@ public class MainApplication extends Application {
         URL xmlURLMain = getClass().getResource("MainWindow.fxml");
         fxmlLoader.setLocation(xmlURLMain);
         Parent parentMain = fxmlLoader.load();
-        Scene scene = new Scene(parentMain);
+        mainScene = new Scene(parentMain);
 
         Parent parentAttendant = fxmlLoader.load(getClass().getResource("AttendantWindow.fxml"));
         attendantScene = new Scene(parentAttendant);
-        stage.setScene(scene);
+
+        Parent parentTec = fxmlLoader.load(getClass().getResource("TecWindow.fxml"));
+        tecScene = new Scene(parentTec);
+
+        /*Parent parentManager = fxmlLoader.load(getClass().getResource("ManagerWindow.fxml"));
+        managerScene = new Scene(parentManager);*/
+        stage.setScene(mainScene);
         stage.show();
 
 
@@ -34,12 +43,17 @@ public class MainApplication extends Application {
     }
     public static void changeScreen(String screen){
         switch (screen){
+            case "main":
+                stage.setScene(mainScene);
+                break;
             case "attendant":
                 stage.setScene(attendantScene);
                 break;
             case "tec":
+               stage.setScene(tecScene);
                 break;
             case "manager":
+                //stage.setScene(managerScene);
                 break;
         }
     }

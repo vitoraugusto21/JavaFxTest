@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxtest.controller.TecWindow">
+   <children>
+      <Button fx:id="TakeOs" alignment="CENTER" layoutX="200.0" layoutY="132.0" mnemonicParsing="false" onAction="#TakeOsAction" prefHeight="25.0" prefWidth="167.0" text="TAKE OS" />
+      <Button fx:id="AddProgram" alignment="CENTER" layoutX="386.0" layoutY="230.0" mnemonicParsing="false" onAction="#AddProgramAction" text="ADD PROGRAMS" />
+      <Button fx:id="AddParts" alignment="CENTER" layoutX="200.0" layoutY="230.0" mnemonicParsing="false" onAction="#AddPartsAction" prefHeight="25.0" prefWidth="167.0" text="ADD PARTS" />
+      <Button fx:id="CancelOs" alignment="CENTER" layoutX="90.0" layoutY="230.0" mnemonicParsing="false" onAction="#CancelOsAction" text="CANCEL OS" />
+      <Button fx:id="FinishOs" alignment="CENTER" layoutX="90.0" layoutY="175.0" mnemonicParsing="false" onAction="#FinishOsAction" prefHeight="25.0" prefWidth="78.0" text="FINISH OS" />
+      <Button fx:id="Cleaning" alignment="TOP_CENTER" contentDisplay="RIGHT" layoutX="384.0" layoutY="175.0" mnemonicParsing="false" onAction="#CleaningAction" prefHeight="25.0" prefWidth="107.0" text="CLEANING" />
+      <Button fx:id="AddOSystem" alignment="TOP_CENTER" contentDisplay="RIGHT" layoutX="200.0" layoutY="175.0" mnemonicParsing="false" onAction="#AddOSystemAction" text="ADD OPERATIONAL SYSTEM" />
+      <Button fx:id="Return" layoutY="2.0" mnemonicParsing="false" onAction="#ReturnAction" text="Return" />
+   </children>
+</Pane>
