@@ -33,8 +33,8 @@ public class MainApplication extends Application {
         Parent parentTec = fxmlLoader.load(getClass().getResource("TecWindow.fxml"));
         tecScene = new Scene(parentTec);
 
-        /*Parent parentManager = fxmlLoader.load(getClass().getResource("ManagerWindow.fxml"));
-        managerScene = new Scene(parentManager);*/
+        Parent parentManager = fxmlLoader.load(getClass().getResource("ManagerWindow.fxml"));
+        managerScene = new Scene(parentManager);
         stage.setScene(mainScene);
         stage.show();
 
@@ -53,7 +53,7 @@ public class MainApplication extends Application {
                stage.setScene(tecScene);
                 break;
             case "manager":
-                //stage.setScene(managerScene);
+                stage.setScene(managerScene);
                 break;
         }
     }
