@@ -15,7 +15,7 @@ public class MainApplication extends Application {
     private static Scene tecScene;
     private static Scene managerScene;
     private static Scene mainScene;
-
+    private static Scene registerScene;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -35,6 +35,10 @@ public class MainApplication extends Application {
 
         Parent parentManager = fxmlLoader.load(getClass().getResource("ManagerWindow.fxml"));
         managerScene = new Scene(parentManager);
+
+        Parent parentRegister = fxmlLoader.load(getClass().getResource("RegisterWindow.fxml"));
+        registerScene = new Scene(parentRegister);
+
         stage.setScene(mainScene);
         stage.show();
 
@@ -55,6 +59,9 @@ public class MainApplication extends Application {
             case "manager":
                 stage.setScene(managerScene);
                 break;
+            case "register":
+                stage.setScene(registerScene);
+
         }
     }
 

@@ -40,7 +40,7 @@ public class MainWindow {
 
     @FXML
     void BtnRegister(ActionEvent event) {
-
+        MainApplication.changeScreen("register");
     }
 
     @FXML
