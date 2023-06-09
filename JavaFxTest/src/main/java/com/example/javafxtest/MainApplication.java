@@ -10,20 +10,36 @@ import java.io.IOException;
 import java.net.URL;
 
 public class MainApplication extends Application {
+    private static Stage stage;
+    private static Scene attendantScene;
+    private static Scene ClientScene;
+
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage primaryStage) throws IOException {
+        stage = primaryStage;
         //carregar arquivo sceneBuilder
         FXMLLoader fxmlLoader = new FXMLLoader();
-        URL xmlURL = getClass().getResource("MainWindow.fxml");
-        fxmlLoader.setLocation(xmlURL);
+        URL xmlURLMain = getClass().getResource("MainWindow.fxml");
+        fxmlLoader.setLocation(xmlURLMain);
+        Parent parentMain = fxmlLoader.load();
+        Scene scene = new Scene(parentMain);
 
-        Parent parent = fxmlLoader.load();
-        Scene scene = new Scene(parent);
+        Parent parentAttendant = fxmlLoader.load(getClass().getResource("AttendantWindow.fxml"));
+        attendantScene = new Scene(parentAttendant);
         stage.setScene(scene);
         stage.show();
     }
-
-    
+    public static void changeScreen(String screen){
+        switch (screen){
+            case "attendant":
+                stage.setScene(attendantScene);
+                break;
+            case "tec":
+                break;
+            case "manager":
+                break;
+        }
+    }
 
 
 
