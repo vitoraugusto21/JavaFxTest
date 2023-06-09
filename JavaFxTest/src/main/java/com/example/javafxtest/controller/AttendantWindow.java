@@ -1,5 +1,6 @@
 package com.example.javafxtest.controller;
 
+import com.example.javafxtest.MainApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,6 +20,9 @@ public class AttendantWindow {
     private Button RegisterClient;
 
     @FXML
+    private Button Return;
+
+    @FXML
     void CancelOsAction(ActionEvent event) {
 
     }
@@ -36,6 +40,11 @@ public class AttendantWindow {
     @FXML
     void RegisterClientAction(ActionEvent event) {
 
+    }
+
+    @FXML
+    void ReturnAction(ActionEvent event) {
+        MainApplication.changeScreen("main");
     }
 
 }
