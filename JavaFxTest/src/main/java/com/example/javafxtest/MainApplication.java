@@ -28,6 +28,9 @@ public class MainApplication extends Application {
         attendantScene = new Scene(parentAttendant);
         stage.setScene(scene);
         stage.show();
+
+
+
     }
     public static void changeScreen(String screen){
         switch (screen){
