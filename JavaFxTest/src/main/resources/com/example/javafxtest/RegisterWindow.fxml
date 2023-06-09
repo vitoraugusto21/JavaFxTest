@@ -13,8 +13,6 @@
       <Text layoutX="501.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADDRESS" />
       <Text layoutX="367.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL" />
       <Text layoutX="180.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PHONE NUMBER" wrappingWidth="90.744140625" />
-      <Text layoutX="294.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="12.607421875" />
-      <TextField fx:id="id" layoutX="241.0" layoutY="134.0" prefHeight="25.0" prefWidth="119.0" />
       <TextField fx:id="name" layoutX="14.0" layoutY="194.0" prefHeight="25.0" prefWidth="119.0" />
       <TextField fx:id="address" layoutX="467.0" layoutY="194.0" prefHeight="25.0" prefWidth="119.0" />
       <TextField fx:id="phoneNumber" layoutX="166.0" layoutY="194.0" prefHeight="25.0" prefWidth="119.0" />

@@ -40,4 +40,5 @@ public class Attendant extends Person {
     public void setaPassword(String aPassword) {
         this.aPassword = aPassword;
     }
+
 }
