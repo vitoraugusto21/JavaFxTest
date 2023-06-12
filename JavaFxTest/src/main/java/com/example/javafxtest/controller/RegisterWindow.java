@@ -1,5 +1,6 @@
 package com.example.javafxtest.controller;
 
+import com.example.javafxtest.MainApplication;
 import com.example.javafxtest.model.dao.AttendantDAOImp;
 import com.example.javafxtest.model.entities.Attendant;
 import javafx.event.ActionEvent;
@@ -78,7 +79,7 @@ public class RegisterWindow {
 
     @FXML
     void ReturnAction(ActionEvent event) {
-
+        MainApplication.changeScreen("main");
     }
 
 }
