@@ -1,9 +1,12 @@
 package com.example.javafxtest.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.example.javafxtest.MainApplication;
+import com.example.javafxtest.model.dao.AttendantDAOImp;
+import com.example.javafxtest.model.entities.Attendant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -50,12 +53,17 @@ public class MainWindow {
     }
 
     @FXML
-    void initialize() {
+    void initialize() throws IOException {
         assert BtnAttendant != null : "fx:id=\"BtnAttendant\" was not injected: check your FXML file 'MainWindow.fxml'.";
         assert BtnManager != null : "fx:id=\"BtnManager\" was not injected: check your FXML file 'MainWindow.fxml'.";
         assert BtnRegisterAction != null : "fx:id=\"BtnRegisterAction\" was not injected: check your FXML file 'MainWindow.fxml'.";
         assert BtnTec != null : "fx:id=\"BtnTec\" was not injected: check your FXML file 'MainWindow.fxml'.";
 
+        Attendant attendant1 = new Attendant("001", "Paul Walker", "1234567890", "paulwalker@gmail.com", "123 main.Main St");
+
+        AttendantDAOImp attendantDAOImp = new AttendantDAOImp();
+        attendantDAOImp.createAttendant(attendant1);
+        System.out.println("Criando arquivo attendants.json");
     }
 
 }

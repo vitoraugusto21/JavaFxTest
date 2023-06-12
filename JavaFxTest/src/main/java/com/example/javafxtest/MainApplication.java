@@ -20,33 +20,44 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
-        //carregar arquivo sceneBuilder
+
+        // Carregar arquivo sceneBuilder
         FXMLLoader fxmlLoader = new FXMLLoader();
         URL xmlURLMain = getClass().getResource("MainWindow.fxml");
         fxmlLoader.setLocation(xmlURLMain);
         Parent parentMain = fxmlLoader.load();
         mainScene = new Scene(parentMain);
 
-        Parent parentAttendant = fxmlLoader.load(getClass().getResource("AttendantWindow.fxml"));
+        FXMLLoader attendantLoader = new FXMLLoader();
+        URL xmlURLAttendant = getClass().getResource("AttendantWindow.fxml");
+        attendantLoader.setLocation(xmlURLAttendant);
+        Parent parentAttendant = attendantLoader.load();
         attendantScene = new Scene(parentAttendant);
 
-        Parent parentTec = fxmlLoader.load(getClass().getResource("TecWindow.fxml"));
+        FXMLLoader tecLoader = new FXMLLoader();
+        URL xmlURLTec = getClass().getResource("TecWindow.fxml");
+        tecLoader.setLocation(xmlURLTec);
+        Parent parentTec = tecLoader.load();
         tecScene = new Scene(parentTec);
 
-        Parent parentManager = fxmlLoader.load(getClass().getResource("ManagerWindow.fxml"));
+        FXMLLoader managerLoader = new FXMLLoader();
+        URL xmlURLManager = getClass().getResource("ManagerWindow.fxml");
+        managerLoader.setLocation(xmlURLManager);
+        Parent parentManager = managerLoader.load();
         managerScene = new Scene(parentManager);
 
-        Parent parentRegister = fxmlLoader.load(getClass().getResource("RegisterWindow.fxml"));
+        FXMLLoader registerLoader = new FXMLLoader();
+        URL xmlURLRegister = getClass().getResource("RegisterWindow.fxml");
+        registerLoader.setLocation(xmlURLRegister);
+        Parent parentRegister = registerLoader.load();
         registerScene = new Scene(parentRegister);
 
         stage.setScene(mainScene);
         stage.show();
-
-
-
     }
-    public static void changeScreen(String screen){
-        switch (screen){
+
+    public static void changeScreen(String screen) {
+        switch (screen) {
             case "main":
                 stage.setScene(mainScene);
                 break;
@@ -54,18 +65,16 @@ public class MainApplication extends Application {
                 stage.setScene(attendantScene);
                 break;
             case "tec":
-               stage.setScene(tecScene);
+                stage.setScene(tecScene);
                 break;
             case "manager":
                 stage.setScene(managerScene);
                 break;
             case "register":
                 stage.setScene(registerScene);
-
+                break;
         }
     }
-
-
 
     public static void main(String[] args) {
         launch(args);
