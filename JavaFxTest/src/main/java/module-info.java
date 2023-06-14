@@ -8,4 +8,6 @@ module com.example.javafxtest {
     exports com.example.javafxtest;
     exports com.example.javafxtest.controller;
     opens com.example.javafxtest.controller to javafx.fxml;
+    opens com.example.javafxtest.model.entities to com.google.gson;
+    opens com.example.javafxtest.model.dao to com.google.gson;
 }
