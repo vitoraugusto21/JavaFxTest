@@ -59,11 +59,6 @@ public class MainWindow {
         assert BtnRegisterAction != null : "fx:id=\"BtnRegisterAction\" was not injected: check your FXML file 'MainWindow.fxml'.";
         assert BtnTec != null : "fx:id=\"BtnTec\" was not injected: check your FXML file 'MainWindow.fxml'.";
 
-        Attendant attendant1 = new Attendant("001", "Paul Walker", "1234567890", "paulwalker@gmail.com", "123 main.Main St");
-
-        AttendantDAOImp attendantDAOImp = new AttendantDAOImp();
-        attendantDAOImp.createAttendant(attendant1);
-        System.out.println("Criando arquivo attendants.json");
     }
 
 }
