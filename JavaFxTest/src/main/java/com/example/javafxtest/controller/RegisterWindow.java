@@ -71,8 +71,8 @@ public class RegisterWindow {
         String number = this.phoneNumber.getText();
         String email = this.email.getText();
         String address = this.address.getText();
-        ArrayList<Os> arrayList = new ArrayList<>();
-        Client client = new Client(ids(), name, number, email, address,arrayList);
+        ArrayList<Os> clientOsList = new ArrayList<>();
+        Client client = new Client(ids(), name, number, email, address,clientOsList);
         System.out.println(client);
         ClientDAOImp clientDAOImp = new ClientDAOImp();
         clientDAOImp.createClient(client);
