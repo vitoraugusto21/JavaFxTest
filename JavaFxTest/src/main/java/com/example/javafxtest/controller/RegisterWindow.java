@@ -2,7 +2,10 @@ package com.example.javafxtest.controller;
 
 import com.example.javafxtest.MainApplication;
 import com.example.javafxtest.model.dao.AttendantDAOImp;
+import com.example.javafxtest.model.dao.ClientDAOImp;
 import com.example.javafxtest.model.entities.Attendant;
+import com.example.javafxtest.model.entities.Client;
+import com.example.javafxtest.model.entities.Os;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -63,7 +66,16 @@ public class RegisterWindow {
     }
 
     @FXML
-    void FinishRegisterClient(ActionEvent event) {
+    void FinishRegisterClient(ActionEvent event) throws IOException {
+        String name = this.name.getText();
+        String number = this.phoneNumber.getText();
+        String email = this.email.getText();
+        String adress = this.address.getText();
+        ArrayList<Os> arrayList = new ArrayList<>();
+        Client client = new Client(ids(), name, number, email, adress,arrayList);
+        System.out.println(client);
+        ClientDAOImp clientDAOImp = new ClientDAOImp();
+        clientDAOImp.createClient(client);
 
     }
 
