@@ -18,15 +18,6 @@ import java.util.Random;
 public class RegisterWindow {
     Random random = new Random();
     private final ArrayList ids = new ArrayList<>();
-
-    public String ids(){
-        int id = random.nextInt(10000);
-        while (ids.contains(id)){
-            id = random.nextInt(10000);
-        }
-        ids.add(id);
-        return String.valueOf(id);
-    }
     @FXML
     private Button FinishRegisterAttendant;
 
@@ -49,17 +40,20 @@ public class RegisterWindow {
     private TextField email;
     @FXML
     private TextField name;
+    @FXML
+    private TextField cpf;
 
     @FXML
     private TextField phoneNumber;
 
     @FXML
     void FinishRegisterAttendantAction(ActionEvent event) throws IOException {
+        String cpf = this.cpf.getText();
         String name = this.name.getText();
         String number = this.phoneNumber.getText();
         String email = this.email.getText();
         String adress = this.address.getText();
-        Attendant attendant = new Attendant(ids(), name, number, email, adress, "31312");
+        Attendant attendant = new Attendant(cpf, name, number, email, adress, "31312");
         AttendantDAOImp attendantDAO = new AttendantDAOImp();
         attendantDAO.createAttendant(attendant);
 
@@ -67,12 +61,13 @@ public class RegisterWindow {
 
     @FXML
     void FinishRegisterClient(ActionEvent event) throws IOException {
+        String cpf = this.cpf.getText();
         String name = this.name.getText();
         String number = this.phoneNumber.getText();
         String email = this.email.getText();
         String address = this.address.getText();
         ArrayList<Os> clientOsList = new ArrayList<>();
-        Client client = new Client(ids(), name, number, email, address,clientOsList);
+        Client client = new Client(cpf, name, number, email, address,clientOsList);
         System.out.println(client);
         ClientDAOImp clientDAOImp = new ClientDAOImp();
         clientDAOImp.createClient(client);
@@ -81,22 +76,24 @@ public class RegisterWindow {
 
     @FXML
     void FinishRegisterManagerAction(ActionEvent event) throws IOException {
+        String cpf = this.cpf.getText();
         String name = this.name.getText();
         String number = this.phoneNumber.getText();
         String email = this.email.getText();
         String address = this.address.getText();
-        Manager manager = new Manager(ids(), name, number, email, address, "pass");
+        Manager manager = new Manager(cpf, name, number, email, address, "pass");
         ManagerDAOImp managerDAOImp = new ManagerDAOImp();
         managerDAOImp.createManager(manager);
     }
 
     @FXML
     void FinishRegisterTecAction(ActionEvent event) throws IOException {
+        String cpf = this.cpf.getText();
         String name = this.name.getText();
         String number = this.phoneNumber.getText();
         String email = this.email.getText();
         String address = this.address.getText();
-        Technician tec = new Technician(ids(), name, number, email, address, "pass");
+        Technician tec = new Technician(cpf, name, number, email, address, "pass");
         TechnicianDAOImp technicianDAOImp = new TechnicianDAOImp();
         technicianDAOImp.createTechnician(tec);
     }
