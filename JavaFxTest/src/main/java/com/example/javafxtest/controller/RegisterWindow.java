@@ -3,8 +3,10 @@ package com.example.javafxtest.controller;
 import com.example.javafxtest.MainApplication;
 import com.example.javafxtest.model.dao.AttendantDAOImp;
 import com.example.javafxtest.model.dao.ClientDAOImp;
+import com.example.javafxtest.model.dao.ManagerDAOImp;
 import com.example.javafxtest.model.entities.Attendant;
 import com.example.javafxtest.model.entities.Client;
+import com.example.javafxtest.model.entities.Manager;
 import com.example.javafxtest.model.entities.Os;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -70,9 +72,9 @@ public class RegisterWindow {
         String name = this.name.getText();
         String number = this.phoneNumber.getText();
         String email = this.email.getText();
-        String adress = this.address.getText();
+        String address = this.address.getText();
         ArrayList<Os> arrayList = new ArrayList<>();
-        Client client = new Client(ids(), name, number, email, adress,arrayList);
+        Client client = new Client(ids(), name, number, email, address,arrayList);
         System.out.println(client);
         ClientDAOImp clientDAOImp = new ClientDAOImp();
         clientDAOImp.createClient(client);
@@ -80,8 +82,14 @@ public class RegisterWindow {
     }
 
     @FXML
-    void FinishRegisterManagerAction(ActionEvent event) {
-
+    void FinishRegisterManagerAction(ActionEvent event) throws IOException {
+        String name = this.name.getText();
+        String number = this.phoneNumber.getText();
+        String email = this.email.getText();
+        String address = this.address.getText();
+        Manager manager = new Manager(ids(), name, number, email, address, "pass");
+        ManagerDAOImp managerDAOImp = new ManagerDAOImp();
+        managerDAOImp.createManager(manager);
     }
 
     @FXML
