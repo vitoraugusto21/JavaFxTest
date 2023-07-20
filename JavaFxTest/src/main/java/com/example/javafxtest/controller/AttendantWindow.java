@@ -29,7 +29,7 @@ public class AttendantWindow {
 
     @FXML
     void EditClientAction(ActionEvent event) {
-
+        MainApplication.changeScreen("editClient");
     }
 
     @FXML
