@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class RegisterWindow {
-    /*Random random = new Random();
+    Random random = new Random();
     private final ArrayList ids = new ArrayList<>();
 
     public String ids(){
@@ -23,7 +23,7 @@ public class RegisterWindow {
         }
         ids.add(id);
         return String.valueOf(id);
-    }*/
+    }
     @FXML
     private Button FinishRegisterAttendant;
 
@@ -52,13 +52,13 @@ public class RegisterWindow {
 
     @FXML
     void FinishRegisterAttendantAction(ActionEvent event) throws IOException {
-        Attendant attendant = new Attendant("fdsfs", this.name.getText(),
-                this.phoneNumber.getText(),
-                this.email.getText(),
-                this.address.getText());
-        System.out.println(attendant.getName());
-        //AttendantDAOImp attendantDAO = new AttendantDAOImp();
-        //attendantDAO.createAttendant(attendant);
+        String name = this.name.getText();
+        String number = this.phoneNumber.getText();
+        String email = this.email.getText();
+        String adress = this.address.getText();
+        Attendant attendant = new Attendant(ids(), name, number, email, adress, "31312");
+        AttendantDAOImp attendantDAO = new AttendantDAOImp();
+        attendantDAO.createAttendant(attendant);
 
     }
 
