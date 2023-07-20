@@ -16,8 +16,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class RegisterWindow {
-    Random random = new Random();
-    private final ArrayList ids = new ArrayList<>();
+    private final ArrayList cpfs = new ArrayList<>();
     @FXML
     private Button FinishRegisterAttendant;
 
