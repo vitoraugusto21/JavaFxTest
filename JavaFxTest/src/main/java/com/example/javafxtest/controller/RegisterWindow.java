@@ -4,10 +4,8 @@ import com.example.javafxtest.MainApplication;
 import com.example.javafxtest.model.dao.AttendantDAOImp;
 import com.example.javafxtest.model.dao.ClientDAOImp;
 import com.example.javafxtest.model.dao.ManagerDAOImp;
-import com.example.javafxtest.model.entities.Attendant;
-import com.example.javafxtest.model.entities.Client;
-import com.example.javafxtest.model.entities.Manager;
-import com.example.javafxtest.model.entities.Os;
+import com.example.javafxtest.model.dao.TechnicianDAOImp;
+import com.example.javafxtest.model.entities.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -93,8 +91,14 @@ public class RegisterWindow {
     }
 
     @FXML
-    void FinishRegisterTecAction(ActionEvent event) {
-
+    void FinishRegisterTecAction(ActionEvent event) throws IOException {
+        String name = this.name.getText();
+        String number = this.phoneNumber.getText();
+        String email = this.email.getText();
+        String address = this.address.getText();
+        Technician tec = new Technician(ids(), name, number, email, address, "pass");
+        TechnicianDAOImp technicianDAOImp = new TechnicianDAOImp();
+        technicianDAOImp.createTechnician(tec);
     }
 
     @FXML
