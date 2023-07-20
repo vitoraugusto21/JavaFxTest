@@ -16,6 +16,7 @@ public class MainApplication extends Application {
     private static Scene managerScene;
     private static Scene mainScene;
     private static Scene registerScene;
+    private static Scene editClientScene;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -52,6 +53,12 @@ public class MainApplication extends Application {
         Parent parentRegister = registerLoader.load();
         registerScene = new Scene(parentRegister);
 
+        FXMLLoader editClientLoader = new FXMLLoader();
+        URL xmlURLEditClient = getClass().getResource("EditClientWindow.fxml");
+        editClientLoader.setLocation(xmlURLEditClient);
+        Parent parentEditClient = editClientLoader.load();
+        editClientScene = new Scene(parentEditClient);
+
         stage.setScene(mainScene);
         stage.show();
     }
@@ -72,6 +79,9 @@ public class MainApplication extends Application {
                 break;
             case "register":
                 stage.setScene(registerScene);
+                break;
+            case "editClient":
+                stage.setScene(editClientScene);
                 break;
         }
     }
