@@ -33,12 +33,36 @@ public class EditClientWindow {
 
     }
 
-    public void editPhoneNumberAction(ActionEvent actionEvent) {
+    public void editPhoneNumberAction(ActionEvent actionEvent) throws IOException {
+        ClientDAOImp clientDAOImp = new ClientDAOImp();
+        File file = new File("clients.json");
+        if (file.exists()) {
+            clientDAOImp.readClients();
+            String cpf = this.clienteCpf.getText();
+            String newAttribute = this.newAttribute.getText();
+            clientDAOImp.updateClient(clientDAOImp.getClientById(cpf), "phoneNumber", newAttribute);
+        }
     }
 
-    public void editEmailAction(ActionEvent actionEvent) {
+    public void editEmailAction(ActionEvent actionEvent) throws IOException {
+        ClientDAOImp clientDAOImp = new ClientDAOImp();
+        File file = new File("clients.json");
+        if (file.exists()) {
+            clientDAOImp.readClients();
+            String cpf = this.clienteCpf.getText();
+            String newAttribute = this.newAttribute.getText();
+            clientDAOImp.updateClient(clientDAOImp.getClientById(cpf), "email", newAttribute);
+        }
     }
 
-    public void editAddressAction(ActionEvent actionEvent) {
+    public void editAddressAction(ActionEvent actionEvent) throws IOException {
+        ClientDAOImp clientDAOImp = new ClientDAOImp();
+        File file = new File("clients.json");
+        if (file.exists()) {
+            clientDAOImp.readClients();
+            String cpf = this.clienteCpf.getText();
+            String newAttribute = this.newAttribute.getText();
+            clientDAOImp.updateClient(clientDAOImp.getClientById(cpf), "address", newAttribute);
+        }
     }
 }
