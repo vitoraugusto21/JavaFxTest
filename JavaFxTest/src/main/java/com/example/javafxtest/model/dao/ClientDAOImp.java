@@ -68,7 +68,7 @@ public class ClientDAOImp implements ClientDAO {
         switch (attributeToChange.toLowerCase()) {
             case "name" -> clientsFromJson.get(client.getId()).setName(newAttribute);
             case "email" -> clientsFromJson.get(client.getId()).setEmail(newAttribute);
-            case "phoneNumber" -> clientsFromJson.get(client.getId()).setPhoneNumber(newAttribute);
+            case "phonenumber" -> clientsFromJson.get(client.getId()).setPhoneNumber(newAttribute);
             case "address" -> clientsFromJson.get(client.getId()).setAddress(newAttribute);
             default -> throw new IllegalArgumentException("Invalid attribute name");
         }
