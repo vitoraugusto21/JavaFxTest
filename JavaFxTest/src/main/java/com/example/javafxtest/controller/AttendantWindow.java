@@ -34,7 +34,7 @@ public class AttendantWindow {
 
     @FXML
     void PaymentAction(ActionEvent event) {
-
+        MainApplication.changeScreen("payment");
     }
 
     @FXML

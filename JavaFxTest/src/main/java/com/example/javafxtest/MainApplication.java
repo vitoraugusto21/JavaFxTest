@@ -17,6 +17,7 @@ public class MainApplication extends Application {
     private static Scene mainScene;
     private static Scene registerScene;
     private static Scene editClientScene;
+    private static Scene paymentScene;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -59,6 +60,12 @@ public class MainApplication extends Application {
         Parent parentEditClient = editClientLoader.load();
         editClientScene = new Scene(parentEditClient);
 
+        FXMLLoader paymentLoader = new FXMLLoader();
+        URL xmlURLPayment = getClass().getResource("PaymentWindow.fxml");
+        paymentLoader.setLocation(xmlURLPayment);
+        Parent parentPayment = paymentLoader.load();
+        paymentScene = new Scene(parentPayment);
+
         stage.setScene(mainScene);
         stage.show();
     }
@@ -82,6 +89,9 @@ public class MainApplication extends Application {
                 break;
             case "editClient":
                 stage.setScene(editClientScene);
+                break;
+            case "payment":
+                stage.setScene(paymentScene);
                 break;
         }
     }
