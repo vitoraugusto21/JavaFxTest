@@ -1,0 +1,4 @@
+Criar os metodos para tratar erros e excessões;
+Criar botão para criar os;
+Inserir metodos do tecnico;
+Inserir metodos do manager;
