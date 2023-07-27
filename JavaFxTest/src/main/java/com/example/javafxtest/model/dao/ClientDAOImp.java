@@ -102,8 +102,8 @@ public class ClientDAOImp implements ClientDAO {
     @Override
     public Map<String, Client> readClients() throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        Reader reader = Files.newBufferedReader(Paths.get("attendants.json"));
-        Map<String, Client> clients = gson.fromJson(reader, new TypeToken<Map<String, Attendant>>(){}.getType());
+        Reader reader = Files.newBufferedReader(Paths.get("clients.json"));
+        Map<String, Client> clients = gson.fromJson(reader, new TypeToken<Map<String, Client>>(){}.getType());
         return clients;
     }
 

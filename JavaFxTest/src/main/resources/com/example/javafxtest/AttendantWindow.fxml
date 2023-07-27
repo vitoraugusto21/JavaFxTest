@@ -3,13 +3,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxtest.controller.AttendantWindow">
    <children>
-      <Button fx:id="RegisterClient" alignment="CENTER" contentDisplay="BOTTOM" layoutX="150.0" layoutY="251.0" mnemonicParsing="false" onAction="#RegisterClientAction" prefHeight="37.0" prefWidth="300.0" text="REGISTER CLIENT" />
-      <Button fx:id="Payment" alignment="CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="113.0" mnemonicParsing="false" onAction="#PaymentAction" prefHeight="37.0" prefWidth="300.0" text="PAYMENT" />
-      <Button fx:id="EditClient" alignment="CENTER" layoutX="151.0" layoutY="157.0" mnemonicParsing="false" onAction="#EditClientAction" prefHeight="37.0" prefWidth="300.0" text="EDIT CLIENT" />
-      <Button fx:id="CancelOs" alignment="CENTER" layoutX="151.0" layoutY="206.0" mnemonicParsing="false" onAction="#CancelOsAction" prefHeight="37.0" prefWidth="300.0" text="CANCEL OS" />
+      <Button fx:id="Payment" alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="135.0" mnemonicParsing="false" onAction="#PaymentAction" prefHeight="37.0" prefWidth="300.0" text="PAYMENT" />
+      <Button fx:id="EditClient" alignment="CENTER" layoutX="150.0" layoutY="179.0" mnemonicParsing="false" onAction="#EditClientAction" prefHeight="37.0" prefWidth="300.0" text="EDIT CLIENT" />
+      <Button fx:id="CancelOs" alignment="CENTER" layoutX="150.0" layoutY="228.0" mnemonicParsing="false" onAction="#CancelOsAction" prefHeight="37.0" prefWidth="300.0" text="CANCEL OS" />
       <Button fx:id="Return" layoutY="2.0" mnemonicParsing="false" onAction="#ReturnAction" text="Return" />
    </children>
 </Pane>
