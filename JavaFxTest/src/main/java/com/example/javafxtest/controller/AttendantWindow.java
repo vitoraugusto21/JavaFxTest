@@ -47,4 +47,7 @@ public class AttendantWindow {
         MainApplication.changeScreen("main");
     }
 
+    public void createOsAction(ActionEvent actionEvent) {
+        MainApplication.changeScreen("createOs");
+    }
 }
