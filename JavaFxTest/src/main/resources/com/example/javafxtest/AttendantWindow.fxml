@@ -9,5 +9,6 @@
       <Button fx:id="EditClient" alignment="CENTER" layoutX="150.0" layoutY="179.0" mnemonicParsing="false" onAction="#EditClientAction" prefHeight="37.0" prefWidth="300.0" text="EDIT CLIENT" />
       <Button fx:id="CancelOs" alignment="CENTER" layoutX="150.0" layoutY="228.0" mnemonicParsing="false" onAction="#CancelOsAction" prefHeight="37.0" prefWidth="300.0" text="CANCEL OS" />
       <Button fx:id="Return" layoutY="2.0" mnemonicParsing="false" onAction="#ReturnAction" text="Return" />
+      <Button fx:id="createOs" alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="92.0" mnemonicParsing="false" onAction="#createOsAction" prefHeight="37.0" prefWidth="300.0" text="CREATE OS" />
    </children>
 </Pane>
