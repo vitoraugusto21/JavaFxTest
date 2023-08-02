@@ -4,7 +4,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="173.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxtest.controller.PaymentWindow">
    <children>
       <Text layoutX="132.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PAYMENT" />
@@ -12,5 +11,6 @@
       <Button fx:id="debitAction" layoutX="80.0" layoutY="95.0" mnemonicParsing="false" onAction="#debitAction" prefHeight="25.0" prefWidth="158.0" text="DEBIT" />
       <Button fx:id="pix" layoutX="80.0" layoutY="31.0" mnemonicParsing="false" onAction="#PixAction" prefHeight="25.0" prefWidth="158.0" text="PIX" />
       <Button fx:id="credit" layoutX="80.0" layoutY="62.0" mnemonicParsing="false" onAction="#CreditAction" prefHeight="25.0" prefWidth="158.0" text="CREDIT" />
+      <Button fx:id="Return" layoutY="2.0" mnemonicParsing="false" onAction="#ReturnAction" text="Return" />
    </children>
 </AnchorPane>
