@@ -47,12 +47,10 @@ public class Os {
      * @param attendantId - identificador do atendente responsável pela OS
      * @param clientId    - identificador do cliente associado à OS
      */
-    public Os(String osId, String description, Date startTime, Payments typePayment, String attendantId, String clientId) {
+    public Os(String osId, String description, Date startTime, String clientId) {
         this.osId = osId;
         this.description = description;
         this.startTime = startTime;
-        this.typePayment = typePayment;
-        this.attendantId = attendantId;
         this.clientId = clientId;
     }
 
