@@ -72,7 +72,7 @@ public class OsDAOImp implements OsDAO {
     public void insertOsInQueue(Os os) throws IOException { //adicionar os a fila
         os.setStatus(IN_PROGRESS);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        if (fileQueue.getParentFile().exists()){
+        if (fileQueue.exists()){
             Reader reader = Files.newBufferedReader(Paths.get("osQueue.json"));
             Queue<Os> queueFromJson = readOsQueue();
             queueFromJson.add(os);
