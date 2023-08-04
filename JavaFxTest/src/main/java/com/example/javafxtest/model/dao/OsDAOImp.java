@@ -92,6 +92,7 @@ public class OsDAOImp implements OsDAO {
         }
     }
 
+
     /**
      * Cancela uma Os, deixando assim o técnico livre.
      *
