@@ -1,5 +1,6 @@
 package com.example.javafxtest.model.dao;
 
+import com.example.javafxtest.model.entities.Os;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -51,7 +52,18 @@ public class ClientDAOImp implements ClientDAO {
             writer.flush();
             writer.close();
         }
-
+    }
+    public void insertOsInCliente(Os os, String clientCpf) throws IOException {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        File file = new File("clients.json");
+        Reader reader = Files.newBufferedReader(Paths.get("clients.json"));
+        Map<String, Client> clientsFromJson = readClients();
+        clientsFromJson.get(clientCpf).getClientOs().add(os);
+        String updateJson = gson.toJson(clientsFromJson);
+        FileWriter writer = new FileWriter(file);
+        writer.write(updateJson);
+        writer.flush();
+        writer.close();
     }
 
     /**
