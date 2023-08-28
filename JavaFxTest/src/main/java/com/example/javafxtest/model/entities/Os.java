@@ -217,5 +217,8 @@ public class Os {
         this.usedParts = usedParts;
     }
 
-
+    @Override
+    public String toString() {
+        return osId;
+    }
 }

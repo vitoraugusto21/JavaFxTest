@@ -1,0 +1,22 @@
+{
+  "09513010554": {
+    "clientOs": [
+      {
+        "osId": "36078",
+        "description": "aodandasdnaodsna",
+        "startTime": "Aug 7, 2023, 4:44:22 PM",
+        "totalValue": 0.0,
+        "cleaning": 70,
+        "operationalSystem": 50,
+        "programs": 10,
+        "clientId": "09513010554",
+        "usedParts": []
+      }
+    ],
+    "id": "09513010554",
+    "name": "Vitor",
+    "phoneNumber": "75997046895",
+    "email": "vioraug",
+    "address": "48000211"
+  }
+}
