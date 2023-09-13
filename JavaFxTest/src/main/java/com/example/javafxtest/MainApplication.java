@@ -19,6 +19,14 @@ public class MainApplication extends Application {
     private static Scene editClientScene;
     private static Scene paymentScene;
     private static Scene createOsWindowScene;
+
+    /**
+     * O método principal que inicia a aplicação JavaFX.
+     *
+     * @param primaryStage - O palco principal da aplicação.
+     * @throws IOException - Exceção de entrada/saída ao carregar arquivos FXML.
+     */
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
@@ -75,7 +83,11 @@ public class MainApplication extends Application {
         stage.setScene(mainScene);
         stage.show();
     }
-
+    /**
+     * Método estático para trocar a cena (screen) exibida no palco principal.
+     *
+     * @param screen - O nome da tela a ser exibida.
+     */
     public static void changeScreen(String screen) {
         switch (screen) {
             case "main":
@@ -105,6 +117,11 @@ public class MainApplication extends Application {
         }
     }
 
+    /**
+     * O método principal que inicia a aplicação JavaFX.
+     *
+     * @param args - Os argumentos da linha de comando.
+     */
     public static void main(String[] args) {
         launch(args);
     }
