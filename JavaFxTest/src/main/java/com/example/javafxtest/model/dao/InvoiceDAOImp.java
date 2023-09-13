@@ -61,10 +61,10 @@ public class InvoiceDAOImp implements InvoiceDAO {
     }
 
     /**
-     * Atualiza o técnico associado a uma fatura.
+     * Atualiza a Ordem de Serviço (Os) associada a uma fatura.
      *
-     * @param invoice       - a fatura a ser atualizada.
-     * @param newTechnician - o novo técnico associado à fatura.
+     * @param invoice A fatura a ser atualizada.
+     * @param newOs   A nova Ordem de Serviço associada à fatura.
      */
     @Override
     public void updateInvoiceOs(Invoice invoice, Os newOs) {
