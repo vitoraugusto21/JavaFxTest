@@ -17,6 +17,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Esta classe implementa a interface `ClientDAO` para realizar operações CRUD em objetos `Client`.
+ * Os clientes são armazenados em um arquivo JSON chamado "clients.json".
+ */
+
 public class ClientDAOImp implements ClientDAO {
 
     private final Map<String, Client> clients = new HashMap<>();
@@ -28,8 +33,8 @@ public class ClientDAOImp implements ClientDAO {
     /**
      * Insere um novo Cliente no banco de dados.
      *
-     *
-     * @param client o Cliente a ser inserido.
+     * @param client O Cliente a ser inserido.
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
      */
     @Override
     public void createClient(Client client) throws IOException {
@@ -53,6 +58,14 @@ public class ClientDAOImp implements ClientDAO {
             writer.close();
         }
     }
+
+    /**
+     * Insere uma Ordem de Serviço (Os) em um Cliente existente no banco de dados.
+     *
+     * @param os         A Ordem de Serviço a ser inserida.
+     * @param clientCpf  O CPF do Cliente ao qual a Ordem de Serviço deve ser associada.
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
+     */
     public void insertOsInCliente(Os os, String clientCpf) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         File file = new File("clients.json");
@@ -69,9 +82,11 @@ public class ClientDAOImp implements ClientDAO {
     /**
      * Atualiza as informações de um Cliente no banco de dados.
      *
-     * @param client            - o Cliente a ser atualizado.
-     * @param attributeToChange - o atributo a ser alterado.
-     * @param newAttribute      - o novo valor do atributo.
+     * @param client            O Cliente a ser atualizado.
+     * @param attributeToChange O atributo a ser alterado.
+     * @param newAttribute      O novo valor do atributo.
+     * @throws IOException            Se ocorrer um erro de E/S ao manipular o arquivo JSON.
+     * @throws IllegalArgumentException Se o nome do atributo a ser alterado for inválido.
      */
     @Override
     public void updateClient(Client client, String attributeToChange, String newAttribute) throws IOException {
@@ -93,7 +108,8 @@ public class ClientDAOImp implements ClientDAO {
     /**
      * Exclui um Cliente do banco de dados.
      *
-     * @param client - o Cliente a ser excluído.
+     * @param client O Cliente a ser excluído.
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
      */
     @Override
     public void deleteClient(Client client) throws IOException {
@@ -109,7 +125,8 @@ public class ClientDAOImp implements ClientDAO {
     /**
      * Obtém todos os Clientes cadastrados no banco de dados.
      *
-     * @return - uma lista de todos os Clientes.
+     * @return Uma lista de todos os Clientes.
+     * @throws IOException Se ocorrer um erro de E/S ao ler o arquivo JSON.
      */
     @Override
     public Map<String, Client> readClients() throws IOException {
@@ -122,8 +139,9 @@ public class ClientDAOImp implements ClientDAO {
     /**
      * Obtém um Cliente específico do banco de dados a partir de seu ID.
      *
-     * @param id - o ID do Cliente a ser buscado.
-     * @return - o Cliente correspondente ao ID especificado.
+     * @param id O ID do Cliente a ser buscado.
+     * @return O Cliente correspondente ao ID especificado.
+     * @throws IOException Se ocorrer um erro de E/S ao ler o arquivo JSON.
      */
     @Override
     public Client getClientById(String id) throws IOException {
