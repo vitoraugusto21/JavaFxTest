@@ -33,8 +33,8 @@ public class StockDAOImp implements StockDAO {
     /**
      * Insere um produto no estoque.
      *
-     * @param product - O produto a ser inserido no estoque.
-     * @param stock   - A lista que representa o estoque.
+     * @param product O produto a ser inserido no estoque.
+     * @throws IOException Se ocorrer um erro durante a operação de leitura ou escrita do arquivo.
      */
     @Override
     public void insertProduct(Product product) throws IOException {
@@ -62,8 +62,8 @@ public class StockDAOImp implements StockDAO {
     /**
      * Remove um produto do estoque.
      *
-     * @param product - O produto a ser removido do estoque.
-     * @param stock   - A lista que representa o estoque.
+     * @param product O produto a ser removido do estoque.
+     * @throws IOException Se ocorrer um erro durante a operação de leitura ou escrita do arquivo.
      */
     @Override
     public void deleteProduct(Product product) throws IOException {
@@ -79,7 +79,8 @@ public class StockDAOImp implements StockDAO {
     /**
      * Retorna uma lista com todos os produtos do estoque.
      *
-     * @return - Uma lista com todos os produtos do estoque.
+     * @return Uma lista com todos os produtos do estoque.
+     * @throws IOException Se ocorrer um erro durante a operação de leitura do arquivo.
      */
     @Override
     public HashMap<String, Product> readProducts() throws IOException {
