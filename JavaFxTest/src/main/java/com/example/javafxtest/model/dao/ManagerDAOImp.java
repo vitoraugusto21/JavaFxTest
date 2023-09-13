@@ -104,7 +104,7 @@ public class ManagerDAOImp implements ManagerDAO {
      * Método que exclui um objeto da classe Manager da estrutura de mapeamento em hash.
      *
      * @param manager objeto da classe Manager a ser excluído.
-     * @param manager
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
      */
     @Override
     public void deleteManager(Manager manager) throws IOException {
@@ -121,6 +121,7 @@ public class ManagerDAOImp implements ManagerDAO {
      * Método que retorna uma lista contendo todos os objetos da classe Manager presentes na estrutura de mapeamento em hash.
      *
      * @return lista contendo todos os objetos da classe Manager presentes na estrutura de mapeamento em hash.
+     * @throws IOException Se ocorrer um erro de E/S ao ler o arquivo JSON.
      */
     @Override
     public Map<String, Manager> readManagers() throws IOException {
@@ -135,6 +136,7 @@ public class ManagerDAOImp implements ManagerDAO {
      *
      * @param id - identificador do objeto da classe Manager a ser retornado.
      * @return - objeto da classe Manager presente na estrutura de mapeamento em hash a partir do seu identificador.
+     * @throws IOException Se ocorrer um erro de E/S ao ler o arquivo JSON.
      */
     @Override
     public Manager getManagerById(String id) throws IOException {
