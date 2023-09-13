@@ -243,7 +243,7 @@ public class OsDAOImp implements OsDAO {
      * @param os Os a ser excluída.
      * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
      */
-    
+
     public void deleteOsInFinishedList(Os os) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         ArrayList<Os> finishedFromJson = readOsFinished();
