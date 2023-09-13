@@ -43,8 +43,6 @@ public class Os {
      * @param osId        - identificador da OS
      * @param description - descrição da OS
      * @param startTime   - data e hora de início da OS
-     * @param typePayment - forma de pagamento da OS
-     * @param attendantId - identificador do atendente responsável pela OS
      * @param clientId    - identificador do cliente associado à OS
      */
     public Os(String osId, String description, Date startTime, String clientId) {
