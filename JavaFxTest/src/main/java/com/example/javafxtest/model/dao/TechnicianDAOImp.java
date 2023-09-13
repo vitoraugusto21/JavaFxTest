@@ -28,9 +28,10 @@ public class TechnicianDAOImp implements TechnicianDAO {
     }
 
     /**
-     * Insere um objeto Technician no banco de dados.
+     * Insere um objeto `Technician` no banco de dados.
      *
-     * @param technician - O objeto Technician a ser inserido.
+     * @param technician O objeto `Technician` a ser inserido.
+     * @throws IOException Se ocorrer um erro durante a operação de leitura ou escrita do arquivo.
      */
     @Override
     public void createTechnician(Technician technician) throws IOException {
@@ -57,11 +58,12 @@ public class TechnicianDAOImp implements TechnicianDAO {
     }
 
     /**
-     * Atualiza um objeto Technician no banco de dados.
+     * Atualiza um objeto `Technician` no banco de dados.
      *
-     * @param technician        - O objeto Technician a ser atualizado.
-     * @param attributeToChange - O atributo do objeto a ser modificado.
-     * @param newAttribute      - O novo valor do atributo modificado.
+     * @param technician        O objeto `Technician` a ser atualizado.
+     * @param attributeToChange O atributo do objeto a ser modificado.
+     * @param newAttribute      O novo valor do atributo modificado.
+     * @throws IOException Se ocorrer um erro durante a operação de leitura ou escrita do arquivo.
      */
     @Override
     public void updateTechnician(Technician technician, String attributeToChange, String newAttribute) throws IOException {
@@ -80,6 +82,13 @@ public class TechnicianDAOImp implements TechnicianDAO {
         writer.close();
     }
 
+    /**
+     * Atualiza o objeto `Os` associado a um técnico no banco de dados.
+     *
+     * @param tec O técnico para o qual a `Os` será associada.
+     * @param os  O objeto `Os` a ser associado ao técnico.
+     * @throws IOException Se ocorrer um erro durante a operação de leitura ou escrita do arquivo.
+     */
     public void updateTechnicianOs(Technician tec, Os os) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Map<String, Technician> techniciansFromJson = readTechnicians();
@@ -91,9 +100,10 @@ public class TechnicianDAOImp implements TechnicianDAO {
     }
 
     /**
-     * Remove um objeto Technician do banco de dados.
+     * Remove um objeto `Technician` do banco de dados.
      *
-     * @param technician - O objeto Technician a ser removido.
+     * @param technician O objeto `Technician` a ser removido.
+     * @throws IOException Se ocorrer um erro durante a operação de leitura ou escrita do arquivo.
      */
     @Override
     public void deleteTechnician(Technician technician) throws IOException {
@@ -107,9 +117,10 @@ public class TechnicianDAOImp implements TechnicianDAO {
     }
 
     /**
-     * Método que retorna uma lista com todos os técnicos cadastrados no banco de dados.
+     * Retorna uma lista com todos os técnicos cadastrados no banco de dados.
      *
-     * @return -  Uma lista com todos os técnicos cadastrados no banco de dados.
+     * @return Uma lista com todos os técnicos cadastrados no banco de dados.
+     * @throws IOException Se ocorrer um erro durante a operação de leitura do arquivo.
      */
     @Override
     public Map<String, Technician> readTechnicians() throws IOException{
@@ -120,10 +131,11 @@ public class TechnicianDAOImp implements TechnicianDAO {
     }
 
     /**
-     * Método que retorna um objeto Technician com base no seu ID.
+     * Retorna um objeto `Technician` com base no seu ID.
      *
-     * @param id - O ID do técnico desejado.
-     * @return - O objeto Technician com o ID fornecido.
+     * @param id O ID do técnico desejado.
+     * @return O objeto `Technician` com o ID fornecido.
+     * @throws IOException Se ocorrer um erro durante a operação de leitura do arquivo.
      */
     @Override
     public Technician getTechnicianById(String id) throws IOException {
