@@ -26,6 +26,12 @@ public class AttendantDAOImp implements AttendantDAO {
     public AttendantDAOImp() {
     }
 
+    /**
+     * Cria um novo atendente ou atualiza um atendente existente no arquivo JSON.
+     *
+     * @param attendant O atendente a ser criado ou atualizado.
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
+     */
     @Override
     public void createAttendant(Attendant attendant) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -50,6 +56,15 @@ public class AttendantDAOImp implements AttendantDAO {
 
     }
 
+    /**
+     * Atualiza um atributo específico de um atendente.
+     *
+     * @param attendant         O atendente a ser atualizado.
+     * @param attributeToChange O atributo a ser alterado (name, email, phonenumber, address).
+     * @param newAttribute      O novo valor do atributo.
+     * @throws IOException            Se ocorrer um erro de E/S ao manipular o arquivo JSON.
+     * @throws IllegalArgumentException Se o nome do atributo a ser alterado for inválido.
+     */
     @Override
     public void updateAttendant(Attendant attendant, String attributeToChange, String newAttribute) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -67,6 +82,13 @@ public class AttendantDAOImp implements AttendantDAO {
         writer.close();
     }
 
+    /**
+     * Exclui um atendente do arquivo JSON.
+     *
+     * @param attendant O atendente a ser excluído.
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
+     */
+
     @Override
     public void deleteAttendant(Attendant attendant) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -78,6 +100,13 @@ public class AttendantDAOImp implements AttendantDAO {
         writer.close();
     }
 
+    /**
+     * Lê todos os atendentes do arquivo JSON e retorna um mapa de atendentes.
+     *
+     * @return Um mapa de atendentes, onde a chave é o ID do atendente e o valor é o objeto Attendant.
+     * @throws IOException Se ocorrer um erro de E/S ao ler o arquivo JSON.
+     */
+
     @Override
     public Map<String, Attendant> readAttendants() throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -86,6 +115,13 @@ public class AttendantDAOImp implements AttendantDAO {
         return attendants;
     }
 
+    /**
+     * Obtém um atendente com base em seu ID.
+     *
+     * @param id O ID do atendente a ser obtido.
+     * @return O objeto Attendant correspondente ao ID fornecido, ou null se não for encontrado.
+     * @throws IOException Se ocorrer um erro de E/S ao ler o arquivo JSON.
+     */
     @Override
     public Attendant getAttendantById(String id) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
