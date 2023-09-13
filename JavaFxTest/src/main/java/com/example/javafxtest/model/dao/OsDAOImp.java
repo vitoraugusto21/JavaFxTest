@@ -38,6 +38,7 @@ public class OsDAOImp implements OsDAO {
      * Pega a primeira Os da fila e a define para o técnico.
      *
      * @param technician - Técnico que irá receber a Os.
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
      */
     public void takeOs(Technician technician) throws IOException { //Pega a primeira Os da fila e a define para o tecnico
         if (technician.getOs() != null) {
@@ -68,6 +69,7 @@ public class OsDAOImp implements OsDAO {
      * Adiciona uma Os à fila.
      *
      * @param os - Os a ser adicionada.
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
      */
     public void insertOsInQueue(Os os) throws IOException { //adicionar os a fila
         os.setStatus(IN_PROGRESS);
@@ -97,6 +99,7 @@ public class OsDAOImp implements OsDAO {
      * Cancela uma Os, deixando assim o técnico livre.
      *
      * @param technician Técnico que está com a Os a ser cancelada.
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
      */
     public void cancelOs(Technician technician) throws IOException { //Cancelar a os, deixando assim o tecnico livre
         TechnicianDAOImp tec = new TechnicianDAOImp();
@@ -129,6 +132,7 @@ public class OsDAOImp implements OsDAO {
      * Finaliza uma Os, adicionando-a à lista de Os finalizadas.
      *
      * @param technician Técnico que está com a Os a ser finalizada.
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
      */
     public void finishOs(Technician technician) throws IOException {
         technician.getOs().setStatus(FINISH);
@@ -160,7 +164,10 @@ public class OsDAOImp implements OsDAO {
     }
 
     /**
+     * Método para ler a fila de Os a partir do arquivo JSON.
      *
+     * @return A fila de Os lida do arquivo JSON.
+     * @throws IOException Se ocorrer um erro de E/S ao ler o arquivo JSON.
      */
     public Queue<Os> readOsQueue() throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -169,6 +176,13 @@ public class OsDAOImp implements OsDAO {
         return queue1;
         }
 
+    /**
+     * Método para ler a lista de Os canceladas a partir do arquivo JSON.
+     *
+     * @return A lista de Os canceladas lida do arquivo JSON.
+     * @throws IOException Se ocorrer um erro de E/S ao ler o arquivo JSON.
+     */
+
     public ArrayList<Os> readOsCanceled() throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Reader reader = Files.newBufferedReader(Paths.get("osCanceled.json"));
@@ -176,12 +190,25 @@ public class OsDAOImp implements OsDAO {
         return osCanceleds;
     }
 
+    /**
+     * Método para ler a lista de Os finalizadas a partir do arquivo JSON.
+     *
+     * @return A lista de Os finalizadas lida do arquivo JSON.
+     * @throws IOException Se ocorrer um erro de E/S ao ler o arquivo JSON.
+     */
+
     public ArrayList<Os> readOsFinished() throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Reader reader = Files.newBufferedReader(Paths.get("osFinished.json"));
         ArrayList<Os> osFinisheds = gson.fromJson(reader, new TypeToken<ArrayList<Os>>(){}.getType());
         return osFinisheds;
     }
+
+    /**
+     * Método para excluir a primeira Os da fila.
+     *
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
+     */
 
     public void deleteOsInQueue() throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -193,6 +220,13 @@ public class OsDAOImp implements OsDAO {
         writer.close();
     }
 
+    /**
+     * Método para excluir uma Os da lista de Os canceladas.
+     *
+     * @param os Os a ser excluída.
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
+     */
+
     public void deleteOsInCanceledList(Os os) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         ArrayList<Os> canceledFromJson = readOsCanceled();
@@ -203,6 +237,13 @@ public class OsDAOImp implements OsDAO {
         writer.close();
     }
 
+    /**
+     * Método para excluir uma Os da lista de Os finalizadas.
+     *
+     * @param os Os a ser excluída.
+     * @throws IOException Se ocorrer um erro de E/S ao manipular o arquivo JSON.
+     */
+    
     public void deleteOsInFinishedList(Os os) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         ArrayList<Os> finishedFromJson = readOsFinished();
